@@ -12,7 +12,7 @@ Este proyecto requiere [NodeJS](https://nodejs.org/) para su ejecución.
 
 ```bash
 git clone https://github.com/facudeluca/clima-app
-cd e-commerce
+cd clima
 npm install
 npm start
 ```
