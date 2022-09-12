@@ -1,38 +1,307 @@
-.App {
-  text-align: center;
+.main{
+    background-image: url(./bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    backdrop-filter: brightness(.5);
+    background-size: cover;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+input{
+    border: none;
+}
+.weatherContainer{
+    margin: 2rem;
+    width: 60%;
+    backdrop-filter: blur(8px);
+    min-height: 600px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    background-position: center;
+    background-size: cover;
+    transition: background-image 1s ease-in-out;
+    position: relative;
+}
+.weatherContainer .background{
+    position: fixed;
+    z-index: -1;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+.weatherContainer .weatherMain{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content:end;
+    align-items: center;
+    padding: 0 3rem 3rem 3rem;
+}
+.weatherContainer #bg-video{
+    transition: all 1s ease-in-out;
+    filter:opacity(.8) brightness(.5);
+}
+.weatherContainer .weatherMain .principalInfo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: left;
+    gap: 1rem;
+    position: relative;
+    margin-bottom: 3rem;
+}
+.weatherContainer .weatherMain .principalInfo h2{
+    font-size: 5rem;
+    margin: 0;
+}
+.weatherContainer .weatherMain .principalInfo .name{
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 0;
+    width: 320px;
+}
+.weatherContainer .weatherMain .principalInfo .principalIcon{
+    position: absolute;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}.weatherContainer .weatherMain .principalInfo .principalIcon h3{
+    font-weight: 200;
+    margin: .5rem 0 0 0 ;
+}
+.weatherContainer .forecast{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: .5rem;
+    align-items: center;
+}
+.weatherContainer .forecast .chevron{
+    display: none;
+}
+.weatherContainer .forecast div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.weatherContainer .forecast h4{
+    font-weight: 200;
+    text-align: center;
+    margin: .5rem 0;
+}
+.weatherContainer .forecast img{
+    width: 35px;
+    margin: 0 auto;
+}
+.weatherContainer .aside{
+    background-color: rgba(0, 0, 0, 0.3);
+    padding-left: 2rem;
+    width: 35%;
+}
+.weatherContainer .aside .input{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.weatherContainer .aside .input input{
+margin: 0 auto;
+width: 100%;
+padding: 2rem 2rem .5rem 0;
+margin-right: 2rem;
+background-color: transparent;
+border-bottom: .5px solid rgba(255, 255, 255, 0.5);
+font-size: 1.2rem;
+color: white;
+}
+.weatherContainer .aside .input input:focus{
+    outline: none;
+}
+.weatherContainer .aside .input button{
+    background-color: rgb(0, 83, 118);
+    border: none;
+    width: 100px;
+    height: 60px;
+    color: white;
+    font-size: 1.5rem;
+    transition: filter .5s ease-in-out;
+    cursor: pointer;
+}.weatherContainer .aside .input button:hover{
+    filter: brightness(.8);
+}
+.weatherContainer .aside .input input::placeholder{
+font-family: greycliff-cf, sans-serif;
+color: rgb(179, 179, 179);
+}
+.weatherContainer .aside .reloj{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+}
+.weatherContainer .aside .reloj h3{
+    font-size: 2rem;
+    margin: 0;
+    font-weight: 600;
+}
+.weatherContainer .aside .weatherDetails{
+    height: 250px;
+}
+.weatherContainer .aside .weatherDetails h4{
+    margin: 2.5rem 0 2.5rem 0;
+    font-weight: 800;
+}
+.weatherContainer .aside .weatherDetails .detailsContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 2rem;
+}
+.weatherContainer .aside .weatherDetails .detailsContainer .detail{
+    padding-right: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+.weatherContainer .aside .weatherDetails .detailsContainer .detail p {
+    font-weight: 200;
+    margin: 0;
+}
+.weatherContainer .aside .weatherDetails .detailsContainer .detail h5{
+    margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.loader{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@media screen and (max-width:1600px) {
+    .weatherContainer{
+        width: 80%;
+    }
+}
+@media screen and (max-width:1200px) {
+    .weatherContainer{
+        width: 90%;
+    }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@media screen and (max-width:991px) {
+    .weatherContainer{
+        flex-direction: column;
+        min-height: 800px;
+        justify-content: space-between;
+    }
+    .weatherContainer .weatherMain{
+        width:auto;
+        position: relative;
+        padding-top: 2rem;
+    }
+    .weatherContainer .aside{
+        width: auto;
+    }
+    .weatherContainer .aside .weatherDetails{
+        height: 100%;
+        padding-bottom: 2rem;
+    }
+    .weatherContainer .forecast{
+        width: 100%;
+        overflow-x: scroll;
+        gap: 1rem;
+    }
+    .weatherContainer .aside .reloj {
+        justify-content: center;
+    }
+    .aside hr{
+    margin-right: 2rem;
+    }
+    .weatherContainer #bg-video{
+        height: 100%;
+    }
+    .loader{
+        width: 100%;
+        padding-top: 2rem;
+    }
 }
 
-.App-link {
-  color: #61dafb;
+@media screen and (max-width:750px) {
+    .weatherContainer .weatherMain .principalInfo h2{
+        font-size: 4rem;
+    }
+    .weatherContainer .weatherMain .principalInfo .name{
+        font-size: 1.8rem;
+    }
+}
+@media screen and (max-width:700px) {
+    .weatherContainer .weatherMain .principalInfo .name{
+        width: 200px;
+    }
+    .weatherContainer .forecast{
+        justify-content: flex-start;
+    }
+    .weatherContainer .forecast .chevron{
+        display: initial;
+        position: absolute;
+        right: 1rem;
+        font-size: 2.5rem;
+    }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media screen and (max-width:600px) {
+    .weatherContainer .weatherMain .principalInfo .name{
+        width: 200px;
+        font-size: 1.5rem;
+    }
+    .weatherContainer .weatherMain .principalInfo .principalIcon{
+        right: 0;
+    }
+    .weatherContainer .weatherMain .principalInfo .principalIcon img{
+        width: 30px;
+        height: 30px;
+    }
+    .weatherContainer .weatherMain .principalInfo .principalIcon h3{
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width:500px) {
+    .weatherContainer .weatherMain{
+        padding: 1rem 2rem;
+    }
+    .weatherContainer .aside{
+        padding: 0;
+    }
+    .weatherContainer .weatherMain .principalInfo{
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+    }
+    .weatherContainer .weatherMain .principalInfo .name{
+        font-size: 2rem;
+        width: 100%;
+    }
+    .weatherContainer .forecast .chevron{
+        right: .5rem;
+        font-size: 1.5rem;
+    }
+    .weatherContainer .aside .input input{
+        margin-right: 0;
+        margin-left: 1rem;
+    }
+    .weatherContainer .aside .reloj h3{
+        font-size: 1.5rem;
+    }
+    .aside hr{
+        margin-left: 2rem;
+    }
+    .aside .weatherDetails{
+        padding-left: 2rem;
+    }
 }

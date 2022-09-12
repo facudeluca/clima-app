@@ -1,0 +1,28 @@
+.error{
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+.error img{
+    width: 250px;
+    filter:invert(1);
+}
+.error h2{
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 2rem;
+}
+
+@media screen and (max-width:991px) {
+    .error{
+        width: 100%;
+    }
+}
+@media screen and (max-width:700px) {
+    .error img{
+        width: 200px;
+    }
+}
