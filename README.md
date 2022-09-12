@@ -11,7 +11,7 @@ Proyecto de aplicación web de clima, que permite buscar y ver el clima en vivo 
 Este proyecto requiere [NodeJS](https://nodejs.org/) para su ejecución.
 
 ```bash
-git clone https://github.com/facudeluca/proyectoReact-DeLuca
+git clone https://github.com/facudeluca/clima-app
 cd e-commerce
 npm install
 npm start
